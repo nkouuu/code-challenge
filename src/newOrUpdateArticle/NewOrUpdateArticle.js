@@ -13,7 +13,7 @@ class NewOrUpdateArticle extends Component {
       this.state = Object.assign({}, this.props.article);
     } else {
       this.state = {
-        home: false,
+        goHome: false,
         title: "",
         author: "",
         content: "",
@@ -34,7 +34,7 @@ class NewOrUpdateArticle extends Component {
   }
 
   triggerClick() {
-    let modal = this.formDiv[0].click();
+    let modal = this.formDiv.click();
   }
 
   handleChange(event) {
@@ -52,12 +52,12 @@ class NewOrUpdateArticle extends Component {
           this.triggerClick();
         })
       : this.props.newArticle(title, author, content, tags).then(a => {
-          this.setState({ home: true });
+          this.setState({ goHome: true });
         });
   }
 
   render() {
-    return this.state.home ? (
+    return this.state.goHome ? (
       <Redirect to="/" />
     ) : (
       <div className="form-div new-update">
@@ -67,6 +67,7 @@ class NewOrUpdateArticle extends Component {
             name="title"
             value={this.state.title}
             onChange={this.handleChange}
+            placeholder=" Title"
             required
           />
 
@@ -75,6 +76,7 @@ class NewOrUpdateArticle extends Component {
             name="author"
             value={this.state.author}
             onChange={this.handleChange}
+            placeholder="Author"
             required
           />
 
@@ -84,14 +86,16 @@ class NewOrUpdateArticle extends Component {
             name="content"
             value={this.state.content}
             onChange={this.handleChange}
+            placeholder="Once upon a time..."
             required
           />
 
-          <label>Tags(separated by coma)</label>
+          <label>Tags</label>
           <input
             name="tags"
             value={this.state.tags}
             onChange={this.handleChange}
+            placeholder="Tags"
             required
           />
 

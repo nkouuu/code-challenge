@@ -10,30 +10,48 @@
   vertical-align: middle;
 }
 .new-form * {
-  margin:0;
+  margin: 0;
+  font-size: 0.7rem;
 }
 
 .new-form {
   width: 60%;
   margin: 5% auto;
   background: white;
-  padding: 30px;
+  padding: 25px;
   text-align: left;
   border-radius: 5px;
 }
 
 .new-form > * {
   width: 100%;
-  margin: 15px;
+  margin: 10px;
 }
 
-
-.new-form input, .new-form button {
-  height:20px;
+.new-form input {
+  height: 20px;
+  border: 0;
+  border-bottom: 1px solid rgb(180, 178, 178);
 }
-.new-form textarea,.new-form input  {
-  margin:10px;
-
-  border:1px solid rgb(219, 213, 213);
+.new-form input:focus::placeholder,
+.new-form textarea:focus::placeholder {
+  color: transparent;
 }
-
+.new-form button {
+  height: 40px;
+  border: 1px solid rgb(0, 195, 255);
+}
+.new-form button:hover {
+  background: rgba(0, 195, 255, 0.055);
+  color: rgb(8, 145, 187);
+}
+.new-form textarea {
+  border: 1px solid rgb(219, 213, 213);
+  border-radius: 5px;
+  background: linear-gradient(rgba(255, 255, 255, 0) 0%,
+  rgba(255, 255, 255, 1) 100%)
+}
+.new-form label{
+  text-decoration: black;
+  font-size: 0.8rem;
+}

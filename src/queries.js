@@ -21,9 +21,9 @@ export const ARTICLE_DETAIL_QUERY = id => `
   }
 `;
 
-export const NEW_ARTICLE_QUERY = (title, author, content, tags) => `
-  mutation{
-    newArticle(title:"${title}",author:"${author}",content:"${content}",tags:"${tags}"){
+export const NEW_ARTICLE_QUERY =  `
+  mutation($title:String, $author:String, $content:String, $tags:String){
+    newArticle(title:$title,author:$author,content:$content,tags:$tags){
       title
       author
       content
@@ -40,6 +40,8 @@ export const DELETE_ARTICLE_QUERY = id => `
     deleteArticle(id:"${id}")
   }
 `;
+
+
 
 export const UPDATE_ARTICLE_QUERY = `
   mutation($id:String,$title:String,$author:String,$content:String,$tags:String){

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ArticleDetail from "./ArticleDetail/ArticleDetail";
 import ArticleList from "./ArticleList/ArticleList";
 import NewOrUpdateArticle from "./newOrUpdateArticle/NewOrUpdateArticle";
+import Footer from './footer/Footer'
 import "./style.css";
 
 class App extends Component {
@@ -31,13 +32,14 @@ class App extends Component {
               </h2>
             </Link>
 
-            <a><span onClick={this.showForm}>New article</span></a>
+            <a className='new-article-link'><span onClick={this.showForm}>New article</span></a>
           </div>
           <Switch>
             <Route path="/:id" component={ArticleDetail} />
 
             <Route path="/" component={ArticleList} />
           </Switch>
+          <Footer></Footer>
         </div>
       </Router>
     );

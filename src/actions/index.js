@@ -26,7 +26,7 @@ export const loadArticles = () => {
 
 export const newArticle = (title, author, content, tags) => {
   let article = async () =>
-    await request(NEW_ARTICLE_QUERY(title, author, content, tags));
+    await request(NEW_ARTICLE_QUERY,{title, author, content, tags});
   return { type: NEW_ARTICLE, payload: article() };
 };
 

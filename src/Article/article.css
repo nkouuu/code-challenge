@@ -1,31 +1,28 @@
-a .article{
-    border:1px solid rgb(194, 193, 196);
-    margin:10px;
-    padding:10px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px rgb(189, 185, 185);
-
+a .article {
+  border: 1px solid rgb(194, 193, 196);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgb(189, 185, 185);
 }
-.articles > a{
-    width: 51%;
-    min-width: 350px;
+.articles > * {
+  width: 51%;
+  min-width: 350px;
 }
 
-a .article:hover{
-    box-shadow: 1px 1px 3px 3px rgb(189, 185, 185);
+a .article:hover {
+  box-shadow: 1px 1px 3px 3px rgb(189, 185, 185);
 }
 
 .article .content {
-    font-size:0.8rem;
+  font-size: 0.8rem;
 }
 
-.article .author{
-    font-size:0.7rem;
-    color:rgb(88, 88, 88);
+.article .author {
+  font-size: 0.7rem;
+  color: rgb(88, 88, 88);
 }
 
-.article *{
-    margin:5px;
+.article * {
+  margin: 5px;
 }
-
-

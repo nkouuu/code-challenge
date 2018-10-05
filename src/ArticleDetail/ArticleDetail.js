@@ -9,18 +9,15 @@ class ArticleDetail extends Component {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
-    this.state = {showForm:false}
+    this.state = { showForm: false };
   }
 
-  componentDidMount(){
-
-  }
+  componentDidMount() {}
 
   componentWillMount() {
     const id = this.props.match.params.id;
     this.props.changeArticle(id);
   }
-  
 
   handleDelete(event) {
     this.props
@@ -28,9 +25,10 @@ class ArticleDetail extends Component {
       .then(a => this.props.history.push("/"));
   }
 
-  
   handleUpdate(event) {
-    this.state.showForm ? this.setState({showForm:false}) : this.setState({showForm:true})
+    this.state.showForm
+      ? this.setState({ showForm: false })
+      : this.setState({ showForm: true });
   }
 
   render() {
@@ -41,15 +39,26 @@ class ArticleDetail extends Component {
         {article ? (
           <div>
             <div>
-               {this.state.showForm ? <NewOrUpdateArticle unmountMe={this.handleUpdate} article={article} /> : ''}
+              {this.state.showForm ? (
+                <NewOrUpdateArticle
+                  unmountMe={this.handleUpdate}
+                  article={article}
+                />
+              ) : (
+                ""
+              )}
             </div>
 
             <div className="activeArticle">
-              <h3>{article ? article.title : ""}</h3>
-              <div className="author">{article ? article.author : ""}</div>
-              <p className="content">{article ? article.content : ""}</p>
-              <button onClick={this.handleDelete}>Delete</button>
-              <button onClick={this.handleUpdate}>Edit</button>
+              <div className="title">
+                <h3>{ article.title }</h3>
+                <div>
+                <button onClick={this.handleUpdate}><i className="fas fa-pencil-alt"></i></button>
+                  <button onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
+                </div>
+              </div>
+              <div className="author">by { article.author }</div>
+              <p className="content">{ article.content }</p>
             </div>
           </div>
         ) : (
