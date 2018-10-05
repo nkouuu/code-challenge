@@ -1,0 +1,39 @@
+.form-div {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: rgba(85, 81, 81, 0.301);
+  text-align: center;
+  vertical-align: middle;
+}
+.new-form * {
+  margin:0;
+}
+
+.new-form {
+  width: 60%;
+  margin: 5% auto;
+  background: white;
+  padding: 30px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.new-form > * {
+  width: 100%;
+  margin: 15px;
+}
+
+
+.new-form input, .new-form button {
+  height:20px;
+}
+.new-form textarea,.new-form input  {
+  margin:10px;
+
+  border:1px solid rgb(219, 213, 213);
+}
+

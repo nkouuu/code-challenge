@@ -1,0 +1,23 @@
+.activeArticle{
+    padding:100px;
+    
+}
+.activeArticle > *{
+    margin:10px;
+}
+
+.activeArticle .author{
+    color:rgb(88, 88, 88);
+    font-size:0.7rem;
+
+}
+
+.activeArticle .content{
+    font-size:0.8rem;
+
+}
+
+.not-found{
+    text-align: center;
+}
+

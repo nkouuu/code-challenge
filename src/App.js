@@ -1,30 +1,45 @@
-import React, { Component } from 'react';
-import request from './request';
-import { ARTICLES_QUERY } from './queries';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import ArticleDetail from "./ArticleDetail/ArticleDetail";
+import ArticleList from "./ArticleList/ArticleList";
+import NewOrUpdateArticle from "./newOrUpdateArticle/NewOrUpdateArticle";
+import "./style.css";
 
 class App extends Component {
-  // definition
   constructor(props) {
     super(props);
-    this.state = {
-      articles: [],
-    };
+    this.state = { showForm: false };
+    this.showForm = this.showForm.bind(this);
   }
 
-  // lifecycle
-  componentWillMount() {
-    request(ARTICLES_QUERY).then(response => {
-      this.setState({ articles: response.data.articles });
-    });
-  }
+  showForm(event) {
+    this.state.showForm ? this.setState({showForm:false}) : this.setState({showForm:true})
 
+  }
   // Renders
   render() {
     return (
-      <div className="App">
-        <h2>Billin code challenge</h2>
-        <pre>{JSON.stringify(this.state.articles, null, 2)}</pre>
-      </div>
+      <Router>
+        <div className="App">
+           {this.state.showForm ? <NewOrUpdateArticle unmountMe={this.showForm}/> : '' }
+
+          <div className="navbar">
+            <Link to="/">
+              <h2>
+                <span className="underlined">Bil</span>
+                lin code challenge{" "}
+              </h2>
+            </Link>
+
+            <a><span onClick={this.showForm}>New article</span></a>
+          </div>
+          <Switch>
+            <Route path="/:id" component={ArticleDetail} />
+
+            <Route path="/" component={ArticleList} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --require 'babel-register' server.js"
+    "start": "nodemon --require 'babel-register' server.js"
   },
   "author": "",
   "license": "ISC",
@@ -18,7 +18,8 @@
     "graphiql": "^0.7.4",
     "graphql": "^0.9.6",
     "lodash": "^4.14.1",
-    "mongoose": "^4.9.8"
+    "mongoose": "^4.9.8",
+    "nodemon": "^1.18.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

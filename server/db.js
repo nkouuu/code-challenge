@@ -5,14 +5,21 @@ import mongoose from 'mongoose';
 mongoose.connect('mongodb://localhost/billin');
 mongoose.set('debug', true);
 
-const Article = mongoose.model('Article', {
+const articleSchema =  new mongoose.Schema({
   author: String,
   content: String,
   excerpt: String,
   published: Boolean,
   tags: [String],
   title: String,
-});
+},{
+  timestamps: {
+  createdAt: 'created_at',
+  updatedAt: 'updated_at'
+}
+})
+
+const Article = mongoose.model('Article',articleSchema );
 
 Article.remove({}, (err) => {
   if (!err) {

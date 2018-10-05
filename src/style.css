@@ -1,0 +1,43 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size:20px;
+}
+*{
+    margin:0;
+    padding:0;
+}
+
+.navbar {
+    background: linear-gradient(135deg ,rgb(61, 172, 236),rgb(114, 197, 223));
+    display:flex;
+    justify-content: space-between;
+    position:fixed;
+    top:0;
+    width: 100%;
+}
+.navbar h2{
+    font-size:1.5rem;
+
+}
+.navbar > *{
+    color:rgb(247, 236, 236);
+    align-items: baseline;
+    margin:20px 30px;;
+}
+
+/* .new-update{
+    display:none;
+} */
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button{
+    border-radius:5px;
+}
+
+.underlined{
+    text-decoration: underline rgb(47, 224, 236)
+}
