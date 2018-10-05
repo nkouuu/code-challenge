@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ArticleDetail from "./ArticleDetail/ArticleDetail";
 import ArticleList from "./ArticleList/ArticleList";
-import NewOrUpdateArticle from "./newOrUpdateArticle/NewOrUpdateArticle";
-import Footer from './footer/Footer'
+import NewOrUpdateArticle from "./NewOrUpdateArticle/NewOrUpdateArticle";
+import Footer from './Footer/Footer'
 import "./style.css";
 
 class App extends Component {

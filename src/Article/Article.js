@@ -6,7 +6,7 @@ import { changeArticle } from "../actions";
 
 class Article extends Component {
   render() {
-    const article = this.props.article;
+    const {article} = this.props
     return (
       <Link to={`${article.id}`}>
         <div className="article">

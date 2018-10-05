@@ -8,7 +8,6 @@ class NewOrUpdateArticle extends Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.triggerClick = this.triggerClick.bind(this);
     if (this.props.article) {
       this.state = Object.assign({}, this.props.article);
     } else {
@@ -33,14 +32,8 @@ class NewOrUpdateArticle extends Component {
     };
   }
 
-  triggerClick() {
-    let modal = this.formDiv.click();
-  }
-
   handleChange(event) {
-    const value = event.target.value;
-    const name = event.target.name;
-
+    const { value, name } = event.target;
     this.setState({ [name]: value });
   }
 
@@ -49,7 +42,7 @@ class NewOrUpdateArticle extends Component {
     let { id, title, author, content, tags } = this.state;
     this.props.article
       ? this.props.updateArticle(id, title, author, content, tags).then(e => {
-          this.triggerClick();
+          this.formDiv.click();
         })
       : this.props.newArticle(title, author, content, tags).then(a => {
           this.setState({ goHome: true });

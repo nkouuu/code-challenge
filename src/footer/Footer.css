@@ -1,10 +1,10 @@
 .footer{
     position: fixed;
     left:0;
-    top:calc(100vh - 56px);
+    top:calc(100vh - 36px);
     width: 100%;
     background: linear-gradient(rgb(59, 59, 59),rgb(133, 131, 131));
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .footer p{

@@ -6,7 +6,7 @@ a .article {
   box-shadow: 1px 1px 1px 1px rgb(189, 185, 185);
 }
 .articles > * {
-  width: 51%;
+  width: 60%;
   min-width: 350px;
 }
 

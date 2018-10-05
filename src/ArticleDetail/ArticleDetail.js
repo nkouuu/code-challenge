@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { changeArticle, deleteArticle } from "../actions";
-import NewOrUpdateArticle from "../newOrUpdateArticle/NewOrUpdateArticle";
+import NewOrUpdateArticle from "../NewOrUpdateArticle/NewOrUpdateArticle";
 import "./articleDetail.css";
 
 class ArticleDetail extends Component {
@@ -35,7 +35,7 @@ class ArticleDetail extends Component {
     const article = this.props.activeArticle;
 
     return (
-      <div>
+      <div className='activeArticle-div'>
         {article ? (
           <div>
             <div>
@@ -62,7 +62,7 @@ class ArticleDetail extends Component {
             </div>
           </div>
         ) : (
-          <h4 className="not-found">Article no found</h4>
+          <h4 className="not-found">Article not found</h4>
         )}
       </div>
     );

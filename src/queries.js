@@ -27,6 +27,7 @@ export const NEW_ARTICLE_QUERY =  `
       title
       author
       content
+      excerpt
       tags
       id
     }
@@ -49,6 +50,7 @@ export const UPDATE_ARTICLE_QUERY = `
       title
       author
       content
+      excerpt
       tags
       id
     } 

@@ -72,7 +72,7 @@ const Mutation = new GraphQLObjectType({
       resolve(parent, args) {
         console.log(args);
         const { title, author, content, tags } = args;
-        return db.Article.create({ title, author, content, tags });
+        return db.Article.create({ title, author, content,excerpt:content.slice(0,350), tags });
       }
     },
 
@@ -97,7 +97,7 @@ const Mutation = new GraphQLObjectType({
       },
       resolve(parent,args){
         const {title,author,content,tags}  = args
-        return db.Article.findByIdAndUpdate({_id:args.id},{title,author,content,tags},{new:true})
+        return db.Article.findByIdAndUpdate({_id:args.id},{title,author,content,excerpt:content.slice(0,350),tags},{new:true})
       }
     }
   })

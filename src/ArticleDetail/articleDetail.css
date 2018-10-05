@@ -1,8 +1,10 @@
-.activeArticle{
+.activeArticle-div{
     padding:10%;
     padding-top:120px;
-    
+
 }
+
+
 .activeArticle > *{
     margin:10px;
 }
@@ -28,6 +30,7 @@
 }
 
 .not-found{
+    font-size: 1.5rem;
     text-align: center;
 }
 
